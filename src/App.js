@@ -14,10 +14,10 @@ function App() {
       <img src={file} />
      */}  
       <Outlet />
-      <div className="footer__design">
+{/*       <div className="footer__design">
       footer
       </div>
-      
+       */}
     </div>
   );
 }
