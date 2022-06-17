@@ -1,4 +1,4 @@
-import styles from "./Login.module.css";
+import styles from "./Login.module.scss";
 import { AuthContext } from "context";
 import { useContext, useState } from "react";
 
@@ -22,7 +22,7 @@ export function Login() {
           setEmail(e.target.value);
         }}
       />
-      <label htmlFor="password">Passwprd:</label>
+      <label htmlFor="password">Password:</label>
       <input
         id="password"
         type="password"

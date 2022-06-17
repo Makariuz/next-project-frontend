@@ -9,11 +9,15 @@ function App() {
 
   return (
     <div>
-      <Navbar />
+    {/*   <Navbar />
       <FileUpload setFile={setFile}/>
       <img src={file} />
+     */}  
       <Outlet />
+      <div className="footer__design">
       footer
+      </div>
+      
     </div>
   );
 }
