@@ -1,4 +1,4 @@
-import styles from "./Login.module.scss";
+import "./Login.scss";
 import { AuthContext } from "context";
 import { useContext, useState } from "react";
 
@@ -12,17 +12,23 @@ export function Login() {
     login(email, password);
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Login</h2>
-      <label htmlFor="email">Email:</label>
+    <div className="container">
+
+    <div className="top-wrapper">
+    <h1>Next Step</h1>
+    </div>
+    <div className="middle-wrapper">
+    <form className="login-form" onSubmit={handleSubmit}>
+      <label htmlFor="email">Email Address</label>
       <input
         id="email"
         value={email}
         onChange={(e) => {
           setEmail(e.target.value);
         }}
+        placeholder="Add Email Address"
       />
-      <label htmlFor="password">Password:</label>
+      <label htmlFor="Password">Password</label>
       <input
         id="password"
         type="password"
@@ -30,8 +36,16 @@ export function Login() {
         onChange={(e) => {
           setPassword(e.target.value);
         }}
+        placeholder="Add Password"
       />
-      <button>login</button>
+      <button className="btn-login btn-blue">Login</button>
     </form>
+    </div>
+    <div className="bottom-wrapper">
+    <article>
+Your future in one place, take the <span>  Next Step. </span></article>
+    </div>
+    
+    </div>
   );
 }

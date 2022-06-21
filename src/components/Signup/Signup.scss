@@ -1,0 +1,81 @@
+@import "../../global.scss";
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+
+  .top-wrapper {
+     /* background-color: lightblue; */
+    width: 100vw;
+    flex: .5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .middle-wrapper {
+    /* background-color: lightcoral; */
+    width: 100vw;
+    height: calc(100vh / 3);
+    flex: 1;
+
+    .signup-form {
+      width: 318px;
+      height: 100%;
+      background: #fed9b7;
+      border-radius: 10px;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+
+      .btn-blue {
+        &.btn-signup {
+            width: 157px;
+            font-size: 24px;
+            padding: 10px 5px;
+            align-self: flex-end;
+        }
+      }
+
+      input {
+        background: #ffffff;
+        border: 2px solid #0081a7;
+        border-radius: 10px;
+        width: 240px;
+        height: 51px;
+        padding: 10px;
+        font-size: 1rem;
+        outline: pink;
+      }
+    }
+  }
+  .bottom-wrapper {
+     /*   background-color: lightgreen; */
+    width: 100vw;
+    flex: .5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    article {
+
+      font-family: "Roboto Mono";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      /*  line-height: 109%; */
+      /* or 26px */
+
+      color: #000000;
+      text-align: center;
+
+      span {
+        color: #0081a7;
+        font-weight: 600;
+        text-align: center;
+      }
+    }
+  }
+}

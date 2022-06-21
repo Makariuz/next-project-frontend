@@ -15,18 +15,35 @@
     justify-content: center;
   }
   .middle-wrapper {
- /*    background-color: lightcoral; */
+    /* background-color: lightcoral; */
     width: 100vw;
     height: calc(100vh / 3);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+   
 
- 
+    .login-form {
+      width: 318px;
+      height: 287px;
+      background: #fed9b7;
+      border-radius: 10px;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+
+
+      input {
+        background: #ffffff;
+        border: 2px solid #0081a7;
+        border-radius: 10px;
+        width: 240px;
+        height: 51px;
+        padding: 10px;
+        font-size: 1rem;
+        outline: pink;
+      }
+    }
   }
   .bottom-wrapper {
-    /*  background-color: lightgreen; */
+    /*    background-color: lightgreen; */
     width: 100vw;
     height: calc(100vh / 3);
     display: flex;
@@ -34,6 +51,7 @@
     justify-content: center;
 
     article {
+
       font-family: "Roboto Mono";
       font-style: normal;
       font-weight: 400;

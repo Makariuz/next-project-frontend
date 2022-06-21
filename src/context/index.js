@@ -7,6 +7,7 @@ export const AuthContext = createContext();
 export function AuthContextProvider({ children }) {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
+  const [jobs, setJobs] = useState(null);
 
   const saveToken = (token) => {
     localStorage.setItem("token", `Bearer ${token}`);
@@ -17,12 +18,13 @@ export function AuthContextProvider({ children }) {
   };
 
   const signup = async (firstName, lastName, email, password) => {
-    const response = await client.post("/auth/signup", {
+    const response = await client.post("/auth/create-user", {
       firstName,
       lastName,
       email,
       password,
     });
+    navigate("/login");
   };
 
   const login = async (email, password) => {
@@ -37,6 +39,13 @@ export function AuthContextProvider({ children }) {
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const getJobs = async () => {
+    const response = await client.get(
+      `${process.env.REACT_APP_BACKEND_URL}/jobs`
+    );
+    setJobs(response.data);
   };
 
   const verify = async () => {
@@ -57,6 +66,7 @@ export function AuthContextProvider({ children }) {
 
   useEffect(() => {
     verify();
+    getJobs();
   }, []);
 
   const value = {
@@ -64,6 +74,8 @@ export function AuthContextProvider({ children }) {
     signup,
     login,
     logout,
+    getJobs,
+    jobs,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

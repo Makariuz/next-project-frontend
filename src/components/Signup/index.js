@@ -1,4 +1,4 @@
-import styles from "./Signup.module.css";
+import  "./Signup.scss";
 import { useState, useContext } from "react";
 import { AuthContext } from "context";
 
@@ -15,25 +15,33 @@ export function Signup() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Signup</h2>
-      <label htmlFor="firstName">First name:</label>
+    <div className="container">
+      <div className="top-wrapper">
+      <h1>Create Account</h1>
+      </div>
+      <div className="middle-wrapper">
+
+      <form className="signup-form" onSubmit={handleSubmit}>
+
+      <label htmlFor="firstName">First Name</label>
       <input
         id="firstName"
         value={firstName}
         onChange={(e) => {
           setFirstName(e.target.value);
         }}
+        placeholder="Insert First Name"
       />
-      <label htmlFor="lastName">Last name:</label>
+      <label htmlFor="lastName">Last Name</label>
       <input
         id="lastName"
         value={lastName}
         onChange={(e) => {
           setLastName(e.target.value);
         }}
+        placeholder="Insert Last Name"
       />
-      <label htmlFor="email">Email:</label>
+      <label htmlFor="email">Email Address</label>
       <input
         id="email"
         type="email"
@@ -41,8 +49,9 @@ export function Signup() {
         onChange={(e) => {
           setEmail(e.target.value);
         }}
+        placeholder="Add Email Address"
       />
-      <label htmlFor="password">Passwprd:</label>
+      <label htmlFor="password">Password</label>
       <input
         id="password"
         type="password"
@@ -50,8 +59,16 @@ export function Signup() {
         onChange={(e) => {
           setPassword(e.target.value);
         }}
+        placeholder="Create Password"
       />
-      <button>Signup</button>
+      <button className="btn-blue btn-signup">Sign Up!</button>
     </form>
+      </div>
+      <div className="bottom-wrapper">
+      <article>
+Your future in one place, take the <span>  Next Step. </span></article>
+      </div>
+    </div>
+    
   );
 }
